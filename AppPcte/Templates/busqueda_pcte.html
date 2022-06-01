@@ -1,0 +1,20 @@
+{% extends "padre.html" %} 
+<!--#extension del padre  -->
+{% load static %}
+
+{% block contenido %}
+<!--form.. indica q lo q esta adentro es un fornulario  -->
+<form action="buscar">
+    <!--#accion dice a donde se envia el formulario a procesar y se especifica c el metodo, como se va a enviar   -->
+    <!--# get (x defaul, si no especifico) va la info a la barra de navegacion, post los datos dentro del cpo del paquete -->
+    {% csrf_token %}
+    <h1>Buscar Paciente</h1>
+    <p>Nombre:</p>
+    <input type="text" name="nombre" id="nombre">
+
+    <input type="submit" value="Enviar">
+<!--submit es el boton encargado de enviar el formulario al servidor  -->
+
+
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "padre.html" %} 
+<!--#extension del padre  -->
+{% load static %}
+
+{% block contenido %}
+<!--form.. indica q lo q esta adentro es un fornulario  -->
+<form action="registro" method="POST">
+    <!--#accion dice a donde se envia el formulario a procesar y se especifica c el metodo, como se va a enviar   -->
+    <!--# get (x defaul, si no especifico) va la info a la barra de navegacion, post los datos dentro del cpo del paquete -->
+    {% csrf_token %}
+    <p>Nombre:</p>
+    <input type="text" name="nombre" required>
+    <p>Edad:</p>
+    <input type="number" name="edad" required>
+    <p>Fecha de nacimiento:</p>
+    <input type="date" name="fecha_nacimiento" required>
+    <p>Estadio_Crio</p>
+    <input type="text" name="estadio_C" required>
+    <p>Cantidad_Crio</p>
+    <input type="number" name="cantidad_C" required>
+    <p>Estadio_Transferencia</p>
+    <input type="text" name="estadio_T" required>
+    <p>Cantidad_Transferencia</p>
+    <input type="number" name="cantidad_T" required>
+
+    <input type="submit" value="Enviar">
+<!--submit es el boton encargado de enviar el formulario al servidor  -->
+
+
+</form>
+{% endblock %}
